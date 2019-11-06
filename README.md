@@ -54,21 +54,20 @@ This sample calls an API at https://fabrikamb2chello.azurewebsites.net which has
 
 Your web API registration should include the following information:
 
-- Enable the **Web App/Web API** setting for your application.
-- Set the **Reply URL** to the appropriate value indicated in the sample or provide any URL if you're only doing the web api registration, for example `https://myapi`.
-- Make sure you also provide a **AppID URI**, for example `demoapi`, this is used to construct the scopes that are configured in you single page application's code.
-- Once your app is created, open the app's **Published Scopes** blade and create a scope with `read` name.
-- Copy the **AppID URI** and **Published Scopes values**, so you can input them in your application's code.
+- Under Redirect URI, select **Web**, and then enter a **Redirect URI** to the appropriate value indicated in the sample or provide any URL if you're only doing the web api registration, for example `https://myapi`.
+- Once your app is created, Navigate to **Expose an API**. Provide a **Application ID URI**, for example `demoapi`, this is used to construct the scopes that are configured in you single page application's code.
+- While in the **Expose an API** blade, create a scope with `read` name.
+- Copy the **Application ID URI** and **Scopes** value, so you can input them in your application's code.
 
 ### [OPTIONAL] Step 5: Create your own Native app
 
-Now you need to [register your native app in your B2C tenant](https://docs.microsoft.com/azure/active-directory-b2c/active-directory-b2c-app-registration#register-a-mobilenative-application), so that it has its own Application ID. Don't forget to grant your application API Access to the web API you registered in the previous step.
+Now you need to [register your native app in your B2C tenant](https://docs.microsoft.com/azure/active-directory-b2c/add-native-application?tabs=applications), so that it has its own Application ID. Don't forget to grant your application API Access to the web API you registered in the previous step.
 
 Your native application registration should include the following information:
 
-- Enable the **Native Client** setting for your application.
-- Once your app is created, open the app's **Properties** blade and set the **Custom Redirect URI** for your app to `msal<Application Id>://auth`.
-- Once your app is created, open the app's **API access** blade and **Add** the API you created in the previous step.
+- Enable the **Public client/native (mobile & desktop)** setting for your application.
+- Configure **Redirect URI** for your app to `msal<Application Id>://auth`.
+- Once your app is created, open the app's **API Permissions** blade and **Add** the API you created in the previous step.
 - Copy the Application ID generated for your application, so you can use it in the next step.
 
 ### [OPTIONAL] Step 6: Configure the Visual Studio project with your app coordinates
